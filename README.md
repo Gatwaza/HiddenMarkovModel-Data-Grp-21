@@ -257,28 +257,28 @@ The notebook has **40 cells** across **15 sections**. Run top-to-bottom:
 
 | Task | Rob | Antony |
 |------|:---:|:------:|
-| Data collection — Walking (≥12 files) | ✅ | ✅ |
-| Data collection — Standing (≥12 files) | ✅ | ✅ |
-| Data collection — Still (≥12 files) | ✅ | ✅ |
-| Data collection — Jumping (≥12 files) | ✅ | ✅ |
-| `process_recording()` — zip parsing, label resolution, timestamp conversion | ✅ | |
-| Section 4 — data validation, sampling rate analysis, windowing justification | | ✅ |
-| `window_data()`, `calculate_rms()`, `calculate_sma()` | ✅ | |
-| `calculate_axis_correlation()`, `calculate_dominant_frequency()`, `calculate_spectral_energy()` | | ✅ |
-| `extract_features_from_window()` — full 72-feature pipeline | ✅ | |
-| Train/test split (recording-level), StandardScaler normalisation | | ✅ |
-| `HMM.__init__()`, `_initialize_gmm_emissions()`, `_get_log_emission_probs()` | ✅ | |
-| `_forward_pass()`, `_backward_pass()`, `_compute_log_gamma_and_xi()` | ✅ | |
-| `_update_parameters()` (M-step), `_compute_total_log_likelihood()`, `_clean()` | ✅ | |
-| `train()` (Baum-Welch with convergence check), `viterbi_decode()`, `score()`, `generate_sequence()` | ✅ | |
-| `build_sequences()`, training loop, convergence plots (Fig 4) | | ✅ |
-| Evaluation functions: `predict_activity_hmm()`, `run_evaluation()`, `print_metrics()` | ✅ | |
-| Confusion matrices (Fig 5), Viterbi decoded sequence plots (Fig 6) | | ✅ |
-| Transition matrix heatmaps (Fig 7), GMM emission bar plots (Fig 8) | | ✅ |
-| New unseen samples pipeline, Fig 9, sensor fusion | ✅ | |
-| Figures 1–3 (raw signals, boxplots, histograms) | | ✅ |
-| Report writing | ✅ | ✅ |
-| GitHub repository setup & README | ✅ | |
+| Data collection — Walking (≥12 files) | |  |
+| Data collection — Standing (≥12 files) |  |  |
+| Data collection — Still (≥12 files) |  |  |
+| Data collection — Jumping (≥12 files) |  |  |
+| `process_recording()` — zip parsing, label resolution, timestamp conversion |  | |
+| Section 4 — data validation, sampling rate analysis, windowing justification | |  |
+| `window_data()`, `calculate_rms()`, `calculate_sma()` |  | |
+| `calculate_axis_correlation()`, `calculate_dominant_frequency()`, `calculate_spectral_energy()` | |  |
+| `extract_features_from_window()` — full 72-feature pipeline |  | |
+| Train/test split (recording-level), StandardScaler normalisation | |  |
+| `HMM.__init__()`, `_initialize_gmm_emissions()`, `_get_log_emission_probs()` |  | |
+| `_forward_pass()`, `_backward_pass()`, `_compute_log_gamma_and_xi()` |  | |
+| `_update_parameters()` (M-step), `_compute_total_log_likelihood()`, `_clean()` |  | |
+| `train()` (Baum-Welch with convergence check), `viterbi_decode()`, `score()`, `generate_sequence()` |  | |
+| `build_sequences()`, training loop, convergence plots (Fig 4) | |  |
+| Evaluation functions: `predict_activity_hmm()`, `run_evaluation()`, `print_metrics()` |  | |
+| Confusion matrices (Fig 5), Viterbi decoded sequence plots (Fig 6) | |  |
+| Transition matrix heatmaps (Fig 7), GMM emission bar plots (Fig 8) | |  |
+| New unseen samples pipeline, Fig 9, sensor fusion |  | |
+| Figures 1–3 (raw signals, boxplots, histograms) | |  |
+| Report writing |  |  |
+| GitHub repository setup & README |  | |
 
 > **Target commit split: ~50% each.** Verify in GitHub → Insights → Contributors.
 
