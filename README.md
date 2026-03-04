@@ -39,7 +39,7 @@ This project implements a **Hidden Markov Model (HMM)** system **entirely from s
 ## Repository Structure
 
 ```
-HiddenMarkovModel-Grp21/
+HiddenMarkovModel-Grp21/HMM
 │
 ├── README.md
 ├── HMM_Activity_Recognition_Grp21_FINAL.ipynb   ← Main notebook (40 cells)
