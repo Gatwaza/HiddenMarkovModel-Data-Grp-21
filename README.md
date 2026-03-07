@@ -17,7 +17,7 @@
 
 ## Project Overview
 
-This project implements a **Hidden Markov Model (HMM)** system **entirely from scratch** (no `hmmlearn`) to classify four human activities from raw smartphone inertial sensor data.
+This project implements a **Hidden Markov Model (HMM)** system **entirely from scratch**
 
 | Detail | Value |
 |--------|-------|
@@ -42,8 +42,8 @@ This project implements a **Hidden Markov Model (HMM)** system **entirely from s
 HiddenMarkovModel-Grp21/HMM
 │
 ├── README.md
-├── HMM_Activity_Recognition_Grp21_FINAL.ipynb   ← Main notebook (40 cells)
-├── HMM_Report_Group21_FINAL.pdf                 ← 4–5 page project report
+├── HMM_Activity_Recognition_Grp21_FINAL.ipynb   ← Main notebook
+├── HMM_Report_Group21_FINAL.pdf                 ← Project report
 │
 ├── Dataset/
 │   ├── Rob/                        ← 25 zip files from Rob
@@ -61,14 +61,14 @@ HiddenMarkovModel-Grp21/HMM
 │   │   ├── Antony_Jumping_01.zip
 │   │   └── ...
 │   │
-│   └── NewTestSamples/             ← Optional: new unseen session recordings
+│   └── NewTestSamples/             ← Unseen records/samples for testing the model performance
 │       └── *.zip
 │
-└── outputs/                        ← Generated after running notebook
-    ├── trained_hmm_models.pkl      → saved to Google Drive
-    ├── fitted_scaler.pkl           → saved to Google Drive
-    ├── features_for_hmm.csv        → saved to Google Drive
-    └── fig1–fig9 *.png             → saved to /content/ in Colab
+└── outputs/                        ← Generated after running notebook, mounted to save directly on drive.
+    ├── trained_hmm_models.pkl      
+    ├── fitted_scaler.pkl           
+    ├── features_for_hmm.csv        
+    └── fig1–fig9 *.png             
 ```
 
 ### Inside each `.zip` recording
@@ -81,7 +81,7 @@ Rob_Walking_01.zip
 ```
 
 > **Naming convention:** `{Member}_{Activity}_{NN}.zip`  
-> The activity label is resolved from: (1) filename, (2) internal Annotation/Tags CSV, (3) internal entry paths — whichever succeeds first.
+> Initially, this was a challenge, and we handled it by resolving the activity label from: (1) filename, (2) internal Annotation/Tags CSV, (3) internal entry paths — whichever succeeds first.
 
 ---
 
@@ -92,13 +92,13 @@ Rob_Walking_01.zip
 | Rob    | Iphone 15 Pro | 100 Hz | @Gatwaza |
 | Antony | Samsung | 100 Hz | @tonywahome |
 
-> Update phone models above before submission. Both phones target 100 Hz via Sensor Logger settings. The notebook handles different rates automatically — see Section 4b.
+> Both phones target 100 Hz via Sensor Logger settings. The notebook handles different rates automatically — see Section 4b.
 
 ---
 
 ## Setup & Installation
 
-### Option A — Google Colab (Recommended, zero install)
+### Note — Google Colab (Recommended, zero install)
 
 **Step 1 — Upload data to Google Drive**
 
@@ -109,19 +109,19 @@ MyDrive/
 └── HiddenMarkovModel Data Grp 21/      ← must match exactly
     ├── Rob/
     ├── Antony/
-    └── NewTestSamples/                 ← optional
+    └── NewTestSamples/                 ← must match too
 ```
 
 **Step 2 — Open the notebook in Colab**
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR-ORG/HiddenMarkovModel-Grp21/blob/main/HMM_Activity_Recognition_Grp21_FINAL.ipynb)
 
-Or: `File → Open notebook → GitHub` → paste repository URL.
+Or: `File → Open notebook → GitHub` → https://github.com/Gatwaza/HiddenMarkovModel-Data-Grp-21.git.
 
 **Step 3 — Run all cells**
 
 ```
-Runtime → Run all   (Ctrl+F9)
+Runtime → Run all
 ```
 
 All dependencies (`numpy`, `pandas`, `matplotlib`, `seaborn`, `scipy`, `sklearn`) are pre-installed in Colab. No `pip install` required.
@@ -178,7 +178,7 @@ jupyter>=1.0
 | Antony | 25 | Walking, Standing, Still, Jumping |
 | **Total** | **50** | All 4 |
 
-Each activity must accumulate **≥ 90 seconds total** across all recordings. Each recording should be **5–10 seconds** long. Section 4a of the notebook validates these requirements automatically.
+Each activity accumulated **≥ 90 seconds total** across all recordings. Each recording was **5–10 seconds** long. Section 4a of the notebook validates these requirements automatically.
 
 ### Naming examples
 
@@ -196,7 +196,7 @@ Antony_Standing_01.zip   ...
 
 ## Running the Notebook
 
-The notebook has **40 cells** across **15 sections**. Run top-to-bottom:
+The notebook has **38 cells** across **14 sections**. Run top-to-bottom:
 
 | Section | Cell(s) | What It Does | Key Output |
 |---------|---------|-------------|------------|
@@ -213,10 +213,9 @@ The notebook has **40 cells** across **15 sections**. Run top-to-bottom:
 | 11 — HMM viz | 30–31 | Transition matrix heatmaps (Fig 7), GMM emission means (Fig 8) | Fig 7–8 |
 | 12 — Save | 33 | Save model bundle to Drive | `trained_hmm_models.pkl` |
 | 13 — New data | 35–37 | Load/synthesise new samples, evaluate, confusion matrices (Fig 9) | Fig 9 + metrics |
-| 14 — Fusion | *(in Sec 13)* | Log-likelihood sensor fusion (alpha=0.5) | Fusion accuracy reported |
-| 15 — Summary | 39 | Performance comparison table, rubric metrics table | Final printed tables |
+| 14 — Summary | 39 | Performance comparison table, rubric metrics table | Final printed tables |
 
-**Expected runtime:** 10–25 minutes on Colab CPU depending on dataset size.
+**Expected runtime:** 10–25 minutes on Colab CPU, depending on dataset size.
 
 ---
 
@@ -230,7 +229,7 @@ The notebook has **40 cells** across **15 sections**. Run top-to-bottom:
 | `fitted_scaler.pkl` | StandardScaler fitted on training set only |
 | `features_for_hmm.csv` | Z-score normalised feature matrix (training windows, no IDs) |
 
-### Saved to `/content/` (download before Colab session ends)
+### Saved to `/content/` (I suggest you download before Colab session ends)
 
 | File | Description |
 |------|-------------|
@@ -243,13 +242,6 @@ The notebook has **40 cells** across **15 sections**. Run top-to-bottom:
 | `fig7_transition_matrices.png` | Learned A matrices as heatmaps (self-loops highlighted in blue) |
 | `fig8_gmm_emission_means.png` | GMM weighted emission means per hidden state (first 12 features) |
 | `fig9_confusion_new.png` | Confusion matrices — new unseen samples (accel + gyro) |
-
-> **Tip — bulk download figures from Colab:**
-> ```python
-> import shutil
-> shutil.make_archive('/content/hmm_figures', 'zip', '/content/', '*.png')
-> # Then download hmm_figures.zip from the Colab file browser (left panel)
-> ```
 
 ---
 
@@ -279,8 +271,6 @@ The notebook has **40 cells** across **15 sections**. Run top-to-bottom:
 | Figures 1–3 (raw signals, boxplots, histograms) | |  |
 | Report writing |  |  |
 | GitHub repository setup & README |  | |
-
-> **Target commit split: ~50% each.** Verify in GitHub → Insights → Contributors.
 
 ---
 
