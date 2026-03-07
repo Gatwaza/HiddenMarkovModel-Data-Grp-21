@@ -44,6 +44,7 @@ HiddenMarkovModel-Grp21/HMM
 ├── README.md
 ├── HMM_Activity_Recognition_Grp21_FINAL.ipynb   ← Main notebook
 ├── HMM_Report_Group21_FINAL.pdf                 ← Project report
+├── Team Task Sheet_Machine Learning Techniques II_Formative 2 - Hidden Markov Models_C1 _Team21.pdf                 ← Task allocation sheet
 │
 ├── Dataset/
 │   ├── Rob/                        ← 25 zip files from Rob
